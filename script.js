@@ -1,7 +1,6 @@
  operate()
 
 function operate(){
-    let result;
     let num1 = prompt("Number: ");
     let operator = prompt("Operator: ")
     let num2 = prompt("Number: ");
