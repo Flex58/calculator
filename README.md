@@ -1,2 +1,2 @@
 # calculator
-Oding Project Calculator
+Odin Project Calculator

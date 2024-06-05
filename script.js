@@ -1,4 +1,4 @@
-operate()
+ operate()
 
 function operate(){
     let result;
@@ -44,4 +44,4 @@ function multiply (x, y) {
 function divide (x, y) {
     let result = x / y;
     return result
-}
+} 
