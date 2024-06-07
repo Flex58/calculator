@@ -27,13 +27,6 @@ body {
     background-color: #31363F;
 }
 
-.row4 {
-    display: flex;
-    width: 500px;
-    height: 100px;
-    gap: 2px;
-}
-
 .row4 .operator {
     flex: 1 0 auto;
 }
@@ -43,25 +36,14 @@ body {
     max-width: none;
 }
 
-#plus {
+#plus,
+#multiply {
     max-width: 119px;
 }
-
-.row3 {
-    display: flex;
-    width: 500px;
-    height: 100px;
-    gap: 2px;
-}
-
-.row2 {
-    display: flex;
-    width: 500px;
-    height: 100px;
-    gap: 2px;
-}
-
-.row1 {
+.row4,
+.row3,
+.row2,
+.row1{
     display: flex;
     width: 500px;
     height: 100px;
@@ -76,23 +58,15 @@ body {
     height: 100px;
 }
 
-#clear {
+.row0 #clear {
    height: 40px;
    max-width: none;
 }
 
-.operator {
-    flex: 1 0 auto;
-    font-size: 30px;
-    max-width: 125px;
-    background-color: #222831;
-    color: #EEEEEE;
-    border-color: #76ABAE;
-    border-radius: 10px;
-}
-
-
-.number {
+.operator,
+.number,
+#clear,
+#equals {
     flex: 1 0 auto;
     font-size: 30px;
     max-width: 125px;
