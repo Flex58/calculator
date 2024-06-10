@@ -7,7 +7,6 @@ let displayNum = [];
 let num;
 let operator;
 let num2;
-let result;
 
 function operate(num1, operator, num2){
     switch (operator) {
