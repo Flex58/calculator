@@ -3,6 +3,7 @@ const numberBtn = document.querySelectorAll(".number");
 const display = document.querySelector("#display");
 const equals = document.querySelector("#equals");
 const clearBtn = document.querySelector("#clear");
+const decimalBtn = document.querySelector("#comma");
 let displayNum = [];
 let num;
 let operator;
@@ -24,7 +25,7 @@ function operate(num1, operator, num2){
 numberBtn.forEach((btn) => {
     btn.addEventListener("click", () => {
         displayNum.push(btn.textContent)
-            display.textContent = displayNum.join("")   
+        display.textContent = displayNum.join("")   
     })
  }) 
 
@@ -48,6 +49,18 @@ equals.addEventListener("click", () => {
 
 clearBtn.addEventListener("click", () => {
     clear()
+})
+
+decimalBtn.addEventListener("click", () => {
+    if (!displayNum.includes(".") && displayNum.length != 0){
+        displayNum.push(".")
+        display.textContent = displayNum.join("")
+    }
+    if (displayNum.length == 0)
+    {
+        displayNum.push("0.");
+        display.textContent = displayNum.join("")
+    }
 })
 
 function calculate() {
