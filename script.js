@@ -34,10 +34,8 @@ operatorBtn.forEach((btn) =>{
             num = displayNum.join("")
             displayNum = [];
         }
-        if (operator != undefined && displayNum.length != 0) {
+        else if (operator != undefined && displayNum.length != 0) {
             calculate()
-            num = displayNum.join("")
-            displayNum = [];
         }
         operator = btn.id
         
