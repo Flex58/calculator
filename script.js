@@ -25,9 +25,20 @@ function operate(num1, operator, num2){
 numberBtn.forEach((btn) => {
     btn.addEventListener("click", () => {
         displayNum.push(btn.textContent)
-        display.textContent = displayNum.join("")   
+        display.textContent = displayNum.join("") 
+        changeTextSize()  
     })
  }) 
+
+ 
+document.addEventListener("keydown", (event) => {
+    if (Number(event.key)){
+        displayNum.push(event.key)
+        display.textContent = displayNum.join("") 
+        changeTextSize()  
+    }
+})
+
 
 operatorBtn.forEach((btn) =>{
     btn.addEventListener("click", () =>{
@@ -38,8 +49,7 @@ operatorBtn.forEach((btn) =>{
         else if (operator != undefined && displayNum.length != 0) {
             calculate()
         }
-        operator = btn.id
-        
+        operator = btn.id  
     })
 })
 
@@ -52,11 +62,12 @@ clearBtn.addEventListener("click", () => {
 })
 
 decimalBtn.addEventListener("click", () => {
+    changeTextSize()
     if (!displayNum.includes(".") && displayNum.length != 0){
         displayNum.push(".")
         display.textContent = displayNum.join("")
     }
-    if (displayNum.length == 0)
+    else if (displayNum.length == 0)
     {
         displayNum.push("0.");
         display.textContent = displayNum.join("")
@@ -81,11 +92,21 @@ function calculate() {
             else {
                 display.textContent = (operate(num, operator, num2))
             }
+            changeTextSize()
             num = displayNum.join("")
             displayNum = []
             operator = undefined 
         }
     }   
+}
+
+function changeTextSize() {
+    if (display.textContent.length > 13){
+        display.style.fontSize = "30px"
+    }
+    else {
+        display.style.fontSize = "60px"
+    }
 }
 
 function clear() {
@@ -94,6 +115,7 @@ function clear() {
     num2 = undefined;
     operator = undefined;
     display.textContent = 0;
+    changeTextSize()
 }
 
 function add(x, y) {

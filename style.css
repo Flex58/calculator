@@ -76,4 +76,7 @@ body {
     height: 60px;
     text-align: end;
     font-size: 60px;
+    text-wrap: wrap balance;
+    word-wrap: break-word;
+    max-width: 500px;
 }
